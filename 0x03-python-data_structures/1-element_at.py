@@ -6,10 +6,7 @@ def element_at(my_list, idx):
     """
 
     length = len(my_list)
-    if idx < 0 || idx > length:
+    if idx < 0 || idx > length - 1:
         return None
 
-    for i in range(length):
-        if idx == i:
-            print("{}".format(my_list[i]))
-            break
+    return my_list[idx]

@@ -5,4 +5,4 @@ if __name__ == "__main__":
     for item in sorted(lists):
         if item.startswith('__'):
             continue
-        print({:s}.format(item))
+        print("{:s}".format(item))

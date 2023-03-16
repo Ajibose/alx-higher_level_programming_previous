@@ -7,18 +7,15 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     tuple_c = ()
 
-    if len(tuple_a) < len(tuple_b):
-        for i in range(len(tuple_b) - len(tuple_a)):
-            tuple_a = tuple_a + (0,)
-    elif len(tuple_b) < len(tuple_a):
-        for i in range(len(tuple_a) - len(tuple_b)):
-            tuple_b = tuple_b + (0,)
+    if len(tuple_a) < 2:
+        for i in range(2 - len(tuple_a)):
+            tuple_a = tuple_a + (0, )
 
-    for i in range(2):
-        for j in range(2):
-            if j == i:
-                add = tuple_a[i] + tuple_b[j]
-                tuple_c = tuple_c + (add,)
-                break
+    if len(tuple_b) < 2:
+        for i in range(2 - len(tuple_b)):
+            tuple_b = tuple_b + (0, )
+
+    tuple_c = tuple_c + (tuple_a[0] + tuple_b[0],)
+    tuple_c = tuple_c + (tuple_a[1] + tuple_b[1],)
 
     return tuple_c

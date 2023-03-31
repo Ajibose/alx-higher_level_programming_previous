@@ -3,6 +3,9 @@
     A module that defines a class square
 """
 
+
 class Square():
-    """A clss that does nothing"""
+    """
+    A class that does nothing
+    """
     pass

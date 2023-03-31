@@ -28,9 +28,9 @@ class Square():
     @property
     def size(self):
         """Retrieve te size of the square
-        
+
            Returns:
-            int: The square size
+           int: The square size
         """
         return self.__size
 

@@ -16,7 +16,7 @@ class Square():
                 size(int): The length of the square
         """
         if type(size) == int:
-            if (size > 0):
+            if (size >= 0):
                 self.__size = size
             else:
                 raise ValueError("Size must be >= :0")

@@ -40,8 +40,6 @@ class Square():
             raise TypeError("Size must be an integer")
 
     def area(self):
-
-
         """Computes the area of a square
 
             Returns:

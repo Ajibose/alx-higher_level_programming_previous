@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    A module that defines a class square
+    A module that defines a class square based on 3-main.py
 """
 
 
@@ -27,7 +27,11 @@ class Square():
 
     @property
     def size(self):
-        """Retrieve te size of the square"""
+        """Retrieve te size of the square
+        
+           Returns:
+            int: The square size
+        """
         return self.__size
 
     @size.setter

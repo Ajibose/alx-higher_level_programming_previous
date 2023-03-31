@@ -15,7 +15,13 @@ class Square():
             Args:
                 size(int): The length of the square
         """
-        self.__size = size
+        if type(size) == int:
+            if (size >= 0):
+                self.__size = size
+            else:
+                raise ValueError("Size must be >= 0")
+        else:
+            raise TypeError("Size must be an integer")
 
     @property
     def size(self):

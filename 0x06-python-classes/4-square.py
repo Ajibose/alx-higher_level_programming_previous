@@ -23,22 +23,22 @@ class Square():
             Returns:
                 int: Area of square
         """
-        return self.__size ** 2
+        return self.__size * self.__size
+
+    @property
+    def size(self):
+        """Retrieve te size of the square"""
+        return self.__size
 
     @size.setter
     def size(self, value):
         """
             Gets the square size
         """
-        if type(size) == int:
-            if (size > 0):
-                self.__size = size
+        if type(value) == int:
+            if (value > 0):
+                self.__size = value
             else:
                 raise ValueError("Size must be >= :0")
         else:
-            raise TypeError("Size must be an int")
-
-    @property
-    def size(self):
-        """Retrieve te size of the square"""
-        return self.__size
+            raise TypeError("Size must be an integer")

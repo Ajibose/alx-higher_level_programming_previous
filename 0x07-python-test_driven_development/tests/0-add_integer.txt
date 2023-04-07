@@ -96,3 +96,27 @@ Testing with more than two arguments
 	Traceback (most recent call last):
 		...
 	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Testing Nan
+=============
+	>>> add_integer(float('nan'), 2)
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(2, float('nan'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+Testing for Overflow
+====================
+	>>> add_integer(float('inf'), 2)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer(2, float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer

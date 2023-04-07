@@ -86,3 +86,10 @@ Testing with complex number
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer
+
+Testing with more than two arguments
+=====================================
+	>>> add_integer(2, 6, 7)
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given

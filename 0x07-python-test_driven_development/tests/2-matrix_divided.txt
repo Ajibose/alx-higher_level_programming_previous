@@ -1,0 +1,96 @@
+==================================
+Doctest for 2-matrix_divided.py
+====================================
+
+The module contains only one function ''matrix_divided(matrix, div)''.
+The function divide the elements of a matrix by an integer ''div''
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+The elements of the matrix must either be float or integer and
+returns a TypeError with message ''matrix must be a matrix (list of lists) of integers/floats'' otherwise
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Each row of te matrix must be of the same size and
+raises a TypeError with mesaage ''Each row of the matrix must have the same size'' otherwise
+
+----------------------------------------------------------------------------------------------------------------------------------------=
+
+Raises a ZeroDivisionError with message ''division by zero'' if div is 0
+div must be an integer or float and raises a TypeError with message ''div must be a number'' otherwise
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Ceeating the matrix variable
+=======================================
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+importing the required function
+======================================
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Testing for integers
+==========================================
+	>>> matrix_divided(matrix, 2)
+	[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+	
+	>>> matrix_divided(matrix, 2.6)
+	[[0.38, 0.77, 1.15], [1.54, 1.92, 2.31]]
+
+	>>> matrix_divided(matrix, -3)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+	>>> matrix[0][0] = 1.89
+	>>> matrix[0][2] = 3.4
+	>>> matrix_divided(matrix, 2)
+	[[0.94, 1.0, 1.7], [2.0, 2.5, 3.0]]
+	>>> matrix[0][0] = 1
+	>>> matrix[0][2] = 3
+	
+Testing for complex numbers
+========================================
+	>>> matrix_divided(matrix, 2.+3j)
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+	
+	>>> matrix[0][1] = 2+3j
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix[0][1] = 2
+ 
+Testing for strings
+========================================
+	>>> matrix_divided(matrix, "string")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+	>>> matrix[0][0] = "string"
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix[0][0] = 1
+
+Testing for overflow
+========================================
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+	>>> matrix[0][0] = float('inf')
+	>>> matrix_divided(matrix, 2)
+	[[inf, 1.0, 1.5], [2.0, 2.5, 3.0]]
+	>>> matrix[0][0] = 1
+
+Testing for nan
+=======================================
+	>>> matrix_divided(matrix, float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
+
+	>>> matrix[0][0] = float('nan')
+	>>> matrix_divided(matrix, 2)
+	[[nan, 1.0, 1.5], [2.0, 2.5, 3.0]]

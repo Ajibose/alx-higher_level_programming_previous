@@ -7,7 +7,9 @@
 
 
 def matrix_divided(matrix, div):
+
     """divides all elements of a matrix"""
+
     result = True
     size = len(matrix[0])
     length = True

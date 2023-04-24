@@ -22,10 +22,10 @@ class Rectangle:
         for i in range(self.__height):
             rec_list.append([])
             for j in range(self.__width):
-                rec_list[i].append("#")    
-        my_rec = "\n".join([''.join(map(str, sublist)) for sublist in rec_list])
+                rec_list[i].append("#")
+        my_rec = "\n".join([''.join(map(str, sublist))
+                            for sublist in rec_list])
         return my_rec
-                
 
     @property
     def width(self):

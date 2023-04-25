@@ -26,7 +26,7 @@ class Rectangle:
         for i in range(self.__height):
             rec_list.append([])
             for j in range(self.__width):
-                rec_list[i].append(type(self).print_symbol)
+                rec_list[i].append(str(self.print_symbol))
         my_rec = "\n".join([''.join(map(str, sublist))
                             for sublist in rec_list])
         return my_rec

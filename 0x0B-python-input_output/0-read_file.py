@@ -7,7 +7,7 @@
 def read_file(filename=""):
     """
     Reads filename and output its contenet to stdout
-    
+
     Args:
         filename (str): path to the file to read
 
